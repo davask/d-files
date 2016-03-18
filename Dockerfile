@@ -1,4 +1,4 @@
-FROM davas/ubuntu:14.04
+FROM davask/ubuntu:14.04
 MAINTAINER davask <contact@davaskweblimited.com>
 
 LABEL dwl.files.language="php5"
