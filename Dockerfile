@@ -3,7 +3,7 @@ MAINTAINER davask <contact@davaskweblimited.com>
 
 LABEL dwl.files.language="php5"
 
-RUN DWL_FILES_USER="davask"
+RUN DWL_FILES_USER=davask
 
 VOLUME /var/www/html
 
