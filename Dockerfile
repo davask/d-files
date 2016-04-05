@@ -7,7 +7,8 @@ RUN DWL_FILES_USER=davask
 
 VOLUME /var/www/html
 
+COPY ./dwl-setup-999-files.sh /tmp/dwl-setup-999-files.sh
 COPY ./dwl-setup-0-files.sh /tmp/dwl-setup-0-files.sh
-RUN chmod 700 /tmp/dwl-setup-0-files.sh
+COPY ./dwl-setup.sh /tmp/dwl-setup.sh
 
-CMD ["/tmp/dwl-setup-0-files.sh"]
+CMD ["/tmp/dwl-setup.sh"]

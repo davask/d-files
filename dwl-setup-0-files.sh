@@ -1,4 +1,3 @@
 #!/bin/bash
-ln -sf /home/${DWL_FILES_USER}/* /var/www/html
-chmod -R 777 /var/www/html
+echo "files Initialized";
 tail -f /dev/null;
