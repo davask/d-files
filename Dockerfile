@@ -9,7 +9,9 @@ ENV APACHE_RUN_GROUP www-data
 RUN groupadd -r ${APACHE_RUN_GROUP} \
   && useradd -r -g ${APACHE_RUN_USER} ${APACHE_RUN_GROUP}
 
-RUN chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /tmp/uploads
+RUN chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP /tmp/uploads
+
+USER $APACHE_RUN_USER
 
 VOLUME /var/www/html
 
