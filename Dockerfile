@@ -6,7 +6,7 @@ LABEL dwl.files.language="php5"
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 
-RUN chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP /tmp/uploads
+RUN chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP /tmp
 
 USER $APACHE_RUN_USER
 
