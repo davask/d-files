@@ -6,8 +6,8 @@ LABEL dwl.files.language="php5"
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
 
-RUN groupadd -r ${APACHE_RUN_GROUP} \
-  && useradd -r -g ${APACHE_RUN_USER} ${APACHE_RUN_GROUP}
+RUN groupadd -r $APACHE_RUN_GROUP
+RUN useradd -r -g $APACHE_RUN_USER $APACHE_RUN_GROUP
 
 RUN chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP /tmp/uploads
 
