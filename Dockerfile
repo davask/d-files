@@ -3,6 +3,14 @@ MAINTAINER davask <contact@davaskweblimited.com>
 
 LABEL dwl.files.language="php5"
 
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+
+RUN groupadd -r ${APACHE_RUN_GROUP} \
+  && useradd -r -g ${APACHE_RUN_USER} ${APACHE_RUN_GROUP}
+
+RUN chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /tmp/uploads
+
 VOLUME /var/www/html
 
 COPY ./dwl-setup-0-files.sh /tmp/dwl-setup-0-files.sh
