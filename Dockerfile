@@ -14,6 +14,8 @@ ENV DWL_INIT_COUNT 0
 # Declare instantiation dir
 ENV DWL_INIT_DIR /tmp/dwl-$DWL_INIT
 
+VOLUME /var/www/html
+
 # Copy instantiation specific file
 COPY ./files.sh $DWL_INIT_DIR/$DWL_INIT_COUNT-files.sh
 # update counter for next container
