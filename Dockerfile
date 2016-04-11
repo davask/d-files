@@ -3,17 +3,11 @@ MAINTAINER davask <contact@davaskweblimited.com>
 
 LABEL dwl.files.language="php5"
 
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
+# define dir app within user folder
+ENV DWL_APP_DIR html
 
-RUN chown -R $APACHE_RUN_USER:$APACHE_RUN_GROUP /tmp
+# Instantiate container
+RUN export DWL_INIT=files
 
-USER $APACHE_RUN_USER
-
-VOLUME /var/www/html
-
-COPY ./dwl-setup-0-files.sh /tmp/dwl-setup-0-files.sh
-COPY ./dwl-setup.sh /tmp/dwl-setup.sh
-RUN chmod 700 /tmp/dwl-setup.sh
-
-CMD ["/tmp/dwl-setup.sh"]
+COPY ./files.sh /tmp/dwl-$DWL_INIT/$DWL_INIT_COUNTER-files.sh
+RUN DWL_INIT_COUNTER=$(($DWL_INIT_COUNTER+1))
