@@ -4,7 +4,7 @@ MAINTAINER davask <contact@davaskweblimited.com>
 LABEL dwl.files.language="php5"
 
 # define dir app within user folder
-ENV DWL_APP_DIR html
+ENV DWL_APP_DIR files
 
 # Declare instantiation type
 ENV DWL_INIT files
