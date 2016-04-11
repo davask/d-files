@@ -14,4 +14,4 @@ do
 done;
 
 echo "##### END OF INITIALIZATION #####";
-tail -f /dev/null;
+# tail -f /dev/null;
