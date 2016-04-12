@@ -17,4 +17,4 @@ ENV DWL_INIT_DIR /tmp/dwl-$DWL_INIT
 # Copy instantiation specific file
 COPY ./files.sh $DWL_INIT_DIR/$DWL_INIT_COUNT-files.sh
 # update counter for next container
-RUN DWL_INIT_COUNT=$(($DWL_INIT_COUNT+1))
+ENV DWL_INIT_COUNT $(($DWL_INIT_COUNT+1))
